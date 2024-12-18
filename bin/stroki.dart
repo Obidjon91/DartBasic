@@ -33,6 +33,27 @@ void main(List<String> arguments) {
   String fullName = '$lastName $name Kto ti ara?';
   print(fullName);
 
-  // 
+  // Удаление пробелов
+  String myName = '   Obidjon';
+  String myLastName = 'Bozorov   ';
+  String myGorod = '   Bukhara  ';
+  print(myName.trimLeft());
+  print(myLastName.trimRight());
+  print(myGorod.trim());
+
+  // Split
+  String myFullName = 'Obidjon Bozorov';  
+  print(myFullName.split(' '));
+  print(myFullName.split(','));
+  print(myFullName);
+
+  // Replace
+  String myFullName2 = 'Obidjon Bozorov';
+  print(myFullName2.replaceAll(' ', ','));
+
+  // Проверка строка на пустоту
+  String myFullName3 = 'Obidjon Bozorov';
+  print(myFullName3.isNotEmpty); // Возвращает true если строка не пустая
+  print(myFullName3.isEmpty); // Возвращает true если строка пустая
 
 }
