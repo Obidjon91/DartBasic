@@ -42,8 +42,8 @@ void main(){
 
   // Заполнить нулями слева и справа
   int chislo = 0000001;
-  print(chislo.toString().padLeft(10, '0'));
-  print(chislo.toString().padRight(10, '0'));
+  print(chislo.toString().padLeft(10, '0')); // 0000000001
+  print(chislo.toString().padRight(10, '0')); //
   
 
 }
