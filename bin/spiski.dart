@@ -61,18 +61,20 @@ void main(List<String> arguments) {
   while (isTrue) {
     print('Введите число от 1 до 12:');
     print('X - выход из программы');
-    final String line = stdin.readLineSync().toString().toLowerCase();
     try {
-      int month = int.parse(line);
+      final String line = stdin.readLineSync().toString().toLowerCase();
       if (line == 'X' || line == 'x') {
-        print(line);
+        // print(line);
         isTrue = false;
+      } else if (line == '1' || line == '2' || line == '3' || line == '4' ||
+          line == '5' || line == '6' || line == '7' || line == '8' ||
+          line == '9' || line == '10' || line == '11' || line == '12') {
+        print('======================================');
+        print('$line Месяц: ${listOfMonths[int.parse(line) - 1]}');
+        print('======================================');
       }
-      // if (month < 1 || month > 12) {
-      //   print(listOfMonths[month - 1]);
-      // }
     } catch (e) {
-      print('error!!!: $e');
+      print('error...: $e');
       break;
     }
   }
