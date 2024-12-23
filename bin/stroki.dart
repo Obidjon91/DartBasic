@@ -28,8 +28,8 @@ void main(List<String> arguments) {
   print(name.replaceRange(0, 1, name[0].toUpperCase()));
 
   // Конкатенация строк
-  print('Hello! ' + name);
-  print(lastName + ' ' + name);
+  print('Hello! $name');
+  print('$lastName $name');
   String fullName = '$lastName $name Kto ti ara?';
   print(fullName);
 
