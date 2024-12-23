@@ -56,6 +56,9 @@ void main(List<String> arguments) {
     'November',
     'December'
   ];
+  print(listOfCities);
+  print(list);
+
 
   bool isTrue = true;
   while (isTrue) {
