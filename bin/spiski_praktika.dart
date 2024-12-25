@@ -54,7 +54,8 @@ void main(List<String> arguments) {
   zadanija2([1, 2, 3]);
 
   print('Задача 3');
-  zadanija3([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+  zadanija3([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
 
   print('Задача 4');
   zadanija4([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -63,10 +64,21 @@ void main(List<String> arguments) {
   zadanija5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
   print('Задача 6');
-  zadanija6([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
-  zadanija6([11, 2, 3, 14, 5, 16, 7, 18, 9, 20], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+  zadanija6([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+  zadanija6([11, 2, 3, 14, 5, 16, 7, 18, 9, 20],
+      [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
 
+  print('Задача 7');
+  zadanija7(['a', 'b', 'c', 'd']);
+
+  print('Задача 8');
+  zadanija8(['Иван', 'Петр', 'Сидор', 'Василий', 'Андрей'], [5, 4, 3, 2, 1]);
+
+  print('Задача 9');
+  zadanija9([1, 2, 1, 3, 2, 4, 5, 3, 6, 7, 6, 8, 9, 10, 8]);
 }
+
 void zadanija1() {
   // Создаем список
   var unikalniyNumbers = <int>[];
@@ -105,14 +117,14 @@ void zadanija4(List<int> numbers) {
   // Через цикл For проходимся по списку
   for (int i = 0; i < numbers.length; i++) {
     // Проверяем есть ли элемент в словаре
-      if (frequencyMap.containsKey(numbers[i])) {
-        // Если есть, то увеличиваем его количество
-        frequencyMap[numbers[i]] = frequencyMap[numbers[i]]! + 1;
-      } else {
-        // Если нет, то добавляем его в словарь
-        frequencyMap[numbers[i]] = 1;
-      }
+    if (frequencyMap.containsKey(numbers[i])) {
+      // Если есть, то увеличиваем его количество
+      frequencyMap[numbers[i]] = frequencyMap[numbers[i]]! + 1;
+    } else {
+      // Если нет, то добавляем его в словарь
+      frequencyMap[numbers[i]] = 1;
     }
+  }
   // Выводим результат в консоль
   print(frequencyMap);
 }
@@ -127,7 +139,6 @@ void zadanija5(List<int> kvadratsChisl) {
   }
   // Выводим результат в консоль
   print(newList);
-
 }
 
 void zadanija6(List<int> listOne, List<int> listTwo) {
@@ -142,4 +153,41 @@ void zadanija6(List<int> listOne, List<int> listTwo) {
   }
   // Выводим результат в консоль
   print(newList);
+}
+
+void zadanija7(List<String> strList) {
+  // Создаем новый список
+  var newList = <String>[];
+  // Через цикл For проходимся по списку по его длине
+  for (var ind = 0; ind < strList.length; ind++) {
+    // Проходимся по списку начиная со следующего элемента
+    for (var i = ind + 1; i < strList.length; i++) {
+      // Добавляем пару элементов в новый список в формате "a, b"
+      newList.add('${strList[ind]}, ${strList[i]}');
+    }
+  }
+  // Выводим результат в консоль
+  print(newList);
+}
+
+void zadanija8(List<String> strList, List<int> intList) {
+  // Проверяем, что списки имеют одинаковую длину
+  if (strList.length == intList.length) {
+    final List<String> result = [];
+    // Через цикл For проходимся по списку по его длине
+    for (int i = 0; i < strList.length; i++) {
+      // Добавляем пару элементов в новый список в формате "a: b"
+      result.add('"${strList[i]}: ${intList[i]}"');
+    }
+    // Выводим результат в консоль
+    print(result);
+    // Если списки не имеют одинаковую длину
+  } else {
+    // Выводим результат в консоль
+    print('Списки не имеют одинаковой длины');
+  }
+}
+
+void zadanija9(List<int> numbers) {
+  numbers.forEach((i) => print(i));
 }
