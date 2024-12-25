@@ -101,7 +101,7 @@ void zadanija3(List<int> listOne, List<int> listTwo) {
 
 void zadanija4(List<int> numbers) {
   // Создаем словарь
-  Map<int, int> frequencyMap = Map();
+  Map<int, int> frequencyMap = {};
   // Через цикл For проходимся по списку
   for (int i = 0; i < numbers.length; i++) {
     // Проверяем есть ли элемент в словаре
