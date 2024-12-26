@@ -77,6 +77,11 @@ void main(List<String> arguments) {
 
   print('Задача 9');
   zadanija9([1, 2, 1, 3, 2, 4, 5, 3, 6, 7, 6, 8, 9, 10, 8]);
+  zadanija9(['a', 'b', 'a', 'c', 'b', 'd', 'e']);
+
+  print('Задача 10');
+  zadanija10([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
 }
 
 void zadanija1() {
@@ -188,6 +193,32 @@ void zadanija8(List<String> strList, List<int> intList) {
   }
 }
 
-void zadanija9(List<int> numbers) {
-  numbers.forEach((i) => print(i));
+void zadanija9(List<dynamic> numbers) {
+  var newList = <dynamic>[];
+  // for (var i in numbers) {
+  //   if (newList.contains(i)){
+  //     continue;
+  //   }else{
+  //     newList.add(i);
+  //   }
+  // }
+  numbers.forEach((element) => newList.contains(element) ? null : newList.add(element));
+  print(newList);
+}
+
+void zadanija10(List<int> numbers) {
+  /*Создайте список из 10 целых чисел и напишите функцию, 
+которая находит максимальную разницу между любыми двумя элементами списка.*/
+
+  int maxDiff = 0;
+  // Через цикл For проходимся по списку по его длине
+  for (int i = 0; i < numbers.length; i++) {
+    // Проходимся по списку начиная со следующего элемента
+    for (int j = i + 1; j < numbers.length; j++) {
+      // Находим максимальную разницу
+      maxDiff = max(maxDiff, numbers[j] - numbers[i]);
+    }
+  }
+  // Выводим результат в консоль
+  print(maxDiff);
 }
